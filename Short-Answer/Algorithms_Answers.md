@@ -35,7 +35,17 @@ c)  def bunnyEars(bunnies):
 
       return 2 + bunnyEars(bunnies-1)
 ```
+Linear time O(n)
 
 ## Exercise II
+
+
+1. def check_floor(numbers of floor=n):
+2. get the middle of n ==> n/2 , I have both left hand side and right hand side
+3. for lhs and rhs drop the egg in the highest floor, is broken, 
+ a. we get the middle of the lhs, lhs/2 or lhs
+4. we continue until we have the highest floor where the egg is not broken, then 
+5. check the value of that floor let say x, then 
+the value of f : x + 1
 
 

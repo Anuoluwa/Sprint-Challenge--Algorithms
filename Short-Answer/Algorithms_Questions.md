@@ -35,12 +35,4 @@ Suppose that you have an n-story building and plenty of eggs. Suppose also that 
 
 Write out your proposed algorithm in plain English or pseudocode AND give the runtime complexity of your solution.
 
-
-get the length of n
-divide the length by 2
-check for index of f in lhs:
-    if f is true:
-     drop egg in n[f - 1]:
-    if floor is true and is greatet than or equal to f:
-        do not drop  the egg 
      
