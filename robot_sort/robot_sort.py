@@ -92,6 +92,9 @@ class SortingRobot:
         """
         return self._light == "ON"
 
+    def get_time(self):
+        self._time += 1
+
     def sort(self):
         """
         Sort the robot's list.

@@ -17,11 +17,11 @@ b)
 b)  sum = 0 ... O(1)
     for i in range(n): ....  O(n) * O(1) 
       j = 1     ............ O(1)
-      while j < n: ......... O(n) * O(n)
+      while j < n: ......... O(logn) * O(n)
         j *= 2   ........... O(1)
         sum += 1 ..........  O(1)
 
-Ignore all the constants, we have O(n) * O(1) + O(n) * O(n)
+Ignore all the constants, we have O(n) * O(1) + O(n) * O(nlogn)
 then we have O(n^2) (loop inside of a loop)
 ```
 
