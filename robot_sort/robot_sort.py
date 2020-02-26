@@ -92,12 +92,89 @@ class SortingRobot:
         """
         return self._light == "ON"
 
+    def get_time(self):
+        self._time += 1
+
     def sort(self):
         """
         Sort the robot's list.
+        --------
+    selection sort===
+    def selection_sort( arr ):
+    # loop through n-1 elements
+    for i in range(0, len(arr) - 1):
+        cur_index = i
+        smallest_index = cur_index
+        # TO-DO: find next smallest element
+        # (hint, can do in 3 loc)
+        for j in range(cur_index + 1, len(arr)):
+            if arr[j] < arr[smallest_index]:
+                smallest_index = j
+
+        arr[smallest_index], arr[cur_index] = arr[cur_index], arr[smallest_index]
+
+        # TO-DO: swap
+
+    return arr
+
+    ----- buble sort-----
+    def bubble_sort( arr ):
+    # set a variable to hosd swaps occured
+    swaps_have_occured = True
+    # loop while swaps have occured
+    while swaps_have_occured:
+        # set the swaps occured to false
+        swaps_have_occured = False
+        # inner loop to iterate over the list (loop through you array)
+        for i in range(0, len(arr) - 1):
+            # check if element is in wrong position
+            if arr[i] > arr[i + 1]:
+                # swap elements
+                arr[i], arr[i + 1] = arr[i + 1], arr[i]
+                # set swaps occured to true
+                swaps_have_occured = True
+    return arr
+
+print(bubble_sort(arr))
         """
-        # Fill this out
-        pass
+        while self.light_is_on() == False:
+            self.set_light_on()
+
+            while self.can_move_right():
+                self.swap_item()
+                self.move_right()
+
+                if self.compare_item() == 1:
+                    self.swap_item()
+                    self.move_left()
+                    self.swap_item()
+                    self.move_right()
+                    self.set_light_off()
+
+                # ..return the item and move on
+                else:
+                    self.move_left()
+                    self.swap_item()
+                    self.move_right()
+
+            self.move_right()
+
+            while self.light_is_on() == False and self.can_move_left():
+                self.swap_item()
+                self.move_left()
+
+                if self.compare_item() == -1:
+                    self.swap_item()
+                    self.move_right()
+                    self.swap_item()
+                    self.move_left()
+
+                else:
+                    self.move_right()
+                    self.swap_item()
+                    self.move_left()
+
+            self.move_left()
 
 
 if __name__ == "__main__":
